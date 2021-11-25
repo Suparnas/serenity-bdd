@@ -56,4 +56,34 @@ public class BasePage extends PageObject {
         waitFor(MY_ACCOUNT_LINK).$(MY_ACCOUNT_LINK).click();
         return this.switchToPage(AccountPage.class);
     }
+
+
+    /***
+     * Method to select a product category from the side panel
+     * @param ProductCategory
+     * @return
+     */
+    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
+
+        switch (productCategory) {
+
+            case Phones:
+
+                waitFor(PHONE_LINK).$(PHONE_LINK).click();
+                return this.switchToPage(ProductPage.class);
+
+            case Laptops:
+
+                waitFor(LAPTOP_LINK).$(LAPTOP_LINK).click();
+                return this.switchToPage(ProductPage.class);
+
+            case Monitors:
+
+                waitFor(MONITOR_LINK).$(MONITOR_LINK).click();
+                return this.switchToPage(ProductPage.class);
+
+            deafult;
+            break;
+        }
+    }
 }

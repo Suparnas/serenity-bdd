@@ -1,6 +1,6 @@
-package demoblaze.cucumber.steps;
+package com.demoblaze.steps;
 
-import demoblaze.cucumber.steps.serenity.DemoblazeStoreSteps;
+import com.demoblaze.steps.serenity.DemoblazeStoreSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;

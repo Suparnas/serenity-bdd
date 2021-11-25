@@ -1,11 +1,8 @@
-package demoblaze.cucumber.steps.serenity;
+package com.demoblaze.steps.serenity;
 
+import com.demoblaze.pages.*;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import com.demoblaze.pages.AccountPage;
-import com.demoblaze.pages.BasePage;
-import com.demoblaze.pages.HomePage;
-import com.demoblaze.pages.LoginPage;
 
 public class DemoblazeStoreSteps extends ScenarioSteps {
 
@@ -28,6 +25,11 @@ public class DemoblazeStoreSteps extends ScenarioSteps {
     @Step("Navigating to Account Page")
     public AccountPage navigateToWelcomePage() {
         return basePage.navigateToWelcomePage();
+    }
+
+    @Step("Navigating to Product Page")
+    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
+        return basePage.navigateToProductCategory(ProductCategory);
     }
 
     @Step("Logging out from the DemoBlaze site")

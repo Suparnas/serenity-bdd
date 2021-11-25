@@ -1,8 +1,4 @@
-package demoblaze.cucumber.steps;
-
-import demoblaze.cucumber.steps.serenity.DemoblazeStoreSteps;
-import io.cucumber.java.en.Given;
-import net.thucydides.core.annotations.Steps;
+package com.demoblaze.steps;
 
 public class UserSignUpSteps {
 //
