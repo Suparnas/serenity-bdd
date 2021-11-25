@@ -1,5 +1,6 @@
 package com.demoblaze.pages;
 
+import com.demoblaze.utils.ProductCategories;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 
@@ -15,14 +16,16 @@ public class BasePage extends PageObject {
 
 
     public LoginPage navigateToSignOnPage() {
+
+        open();
         waitForTextToAppear("PRODUCT STORE"); //use explicit wait for the text to appear
 
         waitFor(HOME_PAGE_LOGO).$(HOME_PAGE_LOGO).click();
         waitFor(LOG_IN_LINK).$(LOG_IN_LINK).click();
-        return this.switchToPage(LoginPage.class);
+        // return this.switchToPage(LoginPage.class);
 
+        return null;
     }
-
 
     //clicks on the Login Link
     //@return
@@ -63,27 +66,29 @@ public class BasePage extends PageObject {
      * @param ProductCategory
      * @return
      */
-    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
-
-        switch (productCategory) {
-
-            case Phones:
-
-                waitFor(PHONE_LINK).$(PHONE_LINK).click();
-                return this.switchToPage(ProductPage.class);
-
-            case Laptops:
-
-                waitFor(LAPTOP_LINK).$(LAPTOP_LINK).click();
-                return this.switchToPage(ProductPage.class);
-
-            case Monitors:
-
-                waitFor(MONITOR_LINK).$(MONITOR_LINK).click();
-                return this.switchToPage(ProductPage.class);
-
-            deafult;
-            break;
-        }
-    }
+//    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
+//
+//        switch (productCategory) {
+//
+//            case Phones:
+//
+//                waitFor(PHONE_LINK).$(PHONE_LINK).click();
+//                return this.switchToPage(ProductPage.class);
+//
+//            case Laptops:
+//
+//                waitFor(LAPTOP_LINK).$(LAPTOP_LINK).click();
+//                return this.switchToPage(ProductPage.class);
+//
+//            case Monitors:
+//
+//                waitFor(MONITOR_LINK).$(MONITOR_LINK).click();
+//                return this.switchToPage(ProductPage.class);
+//
+//            default:
+//            break;
+//        }
+//        return null;
+//    }
 }
+

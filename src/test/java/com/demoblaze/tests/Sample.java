@@ -1,6 +1,10 @@
 package com.demoblaze.tests;
-import org.junit.Test;
 
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Title;
+import org.openqa.selenium.WebDriver;
+
+import com.demoblaze.steps.serenity.DemoBlazeSteps;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -14,13 +18,13 @@ public class Sample {
     WebDriver driver;
 
     @Steps
-    DemoBlazesteps user;
+    DemoBlazeSteps user;
 
     @Test
-    @Title("Navigating to Products page")
-    public void navigateToProductPage() {
+    @Title("Navigating to DemoBlaze page")
+    public void navigateToSignOnPage() {
 
-        user.navigateToProductpage();
+        user.navigateToSignOnPage();
 
     }
 
