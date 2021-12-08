@@ -31,8 +31,12 @@ public class BasePage extends PageObject {
         waitFor(LOG_IN_LINK).find(By.xpath(LOG_IN_LINK)).click();
         return this.switchToPage(LoginPage.class);
     }
-
-    //navigate to Home page
+    //Open Home page
+    //@return
+    public void openStore() {
+        open();
+    }
+    //Open Home page
     //@return
     public HomePage navigateToHome() {
 
