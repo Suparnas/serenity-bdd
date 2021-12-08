@@ -1,6 +1,6 @@
 package com.demoblaze.steps;
 
-import com.demoblaze.steps.serenity.DemoblazeStoreSteps;
+import com.demoblaze.steps.serenity.DemoblazeSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -16,7 +16,7 @@ public class Sample {
     WebDriver driver;
 
     @Steps
-    DemoblazeStoreSteps shopper;
+    DemoblazeSteps shopper;
 
     @Test
     @Title("Navigating to Sign On")
