@@ -32,7 +32,7 @@ public class SignUpTest {
         user.openStore();
         user.navigateToSignUpLink();
         user.addNewUserInfo(userName, password);
-        user.clickSignUp();
+      //  user.clickSignUp();
 
     }
 }

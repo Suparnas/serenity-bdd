@@ -10,7 +10,7 @@ public class BasePage extends PageObject {
     private static final String LOG_OUT_LINK = "//a[@id='logout2']";
     private static final String MY_ACCOUNT_LINK = "//a[@id='nameofuser']";
     private static final String SIGN_UP_LINK = "//a[contains(text(),'About us')]";
-    private static final String CART_LINK = "//a[contains(text(),'Cart')]";
+    private static final String USER_NAME_FIELD = "//a[contains(text(),'Cart')]";
     private static final String CONTACT_LINK = "//a[contains(text(),'Contact')]";
 
 
@@ -101,4 +101,4 @@ public class BasePage extends PageObject {
 //            break;
 //        }
 //    }
-}
+
