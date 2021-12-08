@@ -9,20 +9,28 @@ public class BasePage extends PageObject {
     private static final String LOG_IN_LINK = "//*[@id='login2']";
     private static final String LOG_OUT_LINK = "//a[@id='logout2']";
     private static final String MY_ACCOUNT_LINK = "//a[@id='nameofuser']";
-    private static final String ABOUT_US__LINK = "//a[contains(text(),'About us')]";
+    private static final String SIGN_UP_LINK = "//a[contains(text(),'About us')]";
     private static final String CART_LINK = "//a[contains(text(),'Cart')]";
     private static final String CONTACT_LINK = "//a[contains(text(),'Contact')]";
 
 
-    public LoginPage navigateToSignOnPage() {
+    public HomePage openStore() {
+        open();
         waitForTextToAppear("PRODUCT STORE"); //use explicit wait for the text to appear
 
         waitFor(HOME_PAGE_LOGO).$(HOME_PAGE_LOGO).click();
-        waitFor(LOG_IN_LINK).$(LOG_IN_LINK).click();
-        return this.switchToPage(LoginPage.class);
+        //waitFor(LOG_IN_LINK).$(LOG_IN_LINK).click();
+        return this.switchToPage(HomePage.class);
 
     }
 
+    public HomePage navigateToSignUpLink() {
+        waitForTextToAppear("PRODUCT STORE"); //use explicit wait for the text to appear
+
+        waitFor(SIGN_UP_LINK).$(SIGN_UP_LINK).click();
+        return this.switchToPage(HomePage.class);
+
+    }
 
     //clicks on the Login Link
     //@return
@@ -31,11 +39,9 @@ public class BasePage extends PageObject {
         waitFor(LOG_IN_LINK).find(By.xpath(LOG_IN_LINK)).click();
         return this.switchToPage(LoginPage.class);
     }
+
     //Open Home page
     //@return
-    public void openStore() {
-        open();
-    }
     //Open Home page
     //@return
     public HomePage navigateToHome() {
@@ -61,33 +67,38 @@ public class BasePage extends PageObject {
         return this.switchToPage(AccountPage.class);
     }
 
+    public HomePage addNewUserInfo(String userName, String password) {
+        waitFor(USER_NAME_FIELD).$(USER_NAME_FIELD).click();
+        return this.switchToPage(HomePage.class);
+    }
 
+}
     /***
      * Method to select a product category from the side panel
      * @param ProductCategory
      * @return
      */
-    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
-
-        switch (productCategory) {
-
-            case Phones:
-
-                waitFor(PHONE_LINK).$(PHONE_LINK).click();
-                return this.switchToPage(ProductPage.class);
-
-            case Laptops:
-
-                waitFor(LAPTOP_LINK).$(LAPTOP_LINK).click();
-                return this.switchToPage(ProductPage.class);
-
-            case Monitors:
-
-                waitFor(MONITOR_LINK).$(MONITOR_LINK).click();
-                return this.switchToPage(ProductPage.class);
-
-            deafult;
-            break;
-        }
-    }
+//    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
+//
+//        switch (productCategory) {
+//
+//            case Phones:
+//
+//                waitFor(PHONE_LINK).$(PHONE_LINK).click();
+//                return this.switchToPage(ProductPage.class);
+//
+//            case Laptops:
+//
+//                waitFor(LAPTOP_LINK).$(LAPTOP_LINK).click();
+//                return this.switchToPage(ProductPage.class);
+//
+//            case Monitors:
+//
+//                waitFor(MONITOR_LINK).$(MONITOR_LINK).click();
+//                return this.switchToPage(ProductPage.class);
+//
+//            deafult;
+//            break;
+//        }
+//    }
 }

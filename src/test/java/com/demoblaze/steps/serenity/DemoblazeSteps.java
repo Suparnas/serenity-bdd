@@ -27,13 +27,30 @@ public class DemoblazeSteps extends ScenarioSteps {
         return basePage.navigateToWelcomePage();
     }
 
-    @Step("Navigating to Product Page")
-    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
-        return basePage.navigateToProductCategory(ProductCategory);
+//    @Step("Navigating to Product Page")
+//    public ProductPage navigateToProductCategory(ProductCategories ProductCategory) {
+//        return basePage.navigateToProductCategory(ProductCategory);
+//    }
+
+//    @Step("Logging out from the DemoBlaze site")
+//    public  HomePage Logout() {
+//        return basePage.Logout();
+//    }
+
+    @Step("Opening the site")
+    public HomePage openStore() { return basePage.openStore();
     }
 
-    @Step("Logging out from the DemoBlaze site")
-    public  HomePage Logout() {
-        return basePage.Logout();
+
+
+    @Step("Navigating to Signup Link")
+    public HomePage navigateToSignUpLink() {
+        return basePage.navigateToSignUpLink();
+    }
+
+    @Step("Entering info")
+    public HomePage addNewUserInfo(String userName, String password) {
+        return basePage.addNewUserInfo(userName, password);
     }
 }
+
