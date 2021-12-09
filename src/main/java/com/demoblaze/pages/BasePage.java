@@ -9,28 +9,29 @@ public class BasePage extends PageObject {
     private static final String LOG_IN_LINK = "//*[@id='login2']";
     private static final String LOG_OUT_LINK = "//a[@id='logout2']";
     private static final String MY_ACCOUNT_LINK = "//a[@id='nameofuser']";
-    private static final String SIGN_UP_LINK = "//a[contains(text(),'About us')]";
-    private static final String USER_NAME_FIELD = "//a[contains(text(),'Cart')]";
+    private static final String SIGN_UP_LINK = "//a[contains(text(),'Sign up')]";
+    //private static final String USER_NAME_FIELD = "//a[contains(text(),'Cart')]";
+    private static final String USER_NAME_FIELD = "//input[@id='sign-username']";
     private static final String CONTACT_LINK = "//a[contains(text(),'Contact')]";
 
 
-    public HomePage openStore() {
-        open();
-        waitForTextToAppear("PRODUCT STORE"); //use explicit wait for the text to appear
+//    public HomePage openStore() {
+//        open();
+//        //waitForTextToAppear("PRODUCT STORE"); //use explicit wait for the text to appear
+//
+//        waitFor(HOME_PAGE_LOGO).$(HOME_PAGE_LOGO).click();
+//        //waitFor(LOG_IN_LINK).$(LOG_IN_LINK).click();
+//        return this.switchToPage(HomePage.class);
+//
+//    }
 
-        waitFor(HOME_PAGE_LOGO).$(HOME_PAGE_LOGO).click();
-        //waitFor(LOG_IN_LINK).$(LOG_IN_LINK).click();
-        return this.switchToPage(HomePage.class);
-
-    }
-
-    public HomePage navigateToSignUpLink() {
-        waitForTextToAppear("PRODUCT STORE"); //use explicit wait for the text to appear
-
-        waitFor(SIGN_UP_LINK).$(SIGN_UP_LINK).click();
-        return this.switchToPage(HomePage.class);
-
-    }
+//    public HomePage navigateToSignUpLink() {
+//        waitForTextToAppear("PRODUCT STORE"); //use explicit wait for the text to appear
+//
+//        waitFor(SIGN_UP_LINK).$(SIGN_UP_LINK).click();
+//        return (HomePage) this;
+//
+//    }
 
     //clicks on the Login Link
     //@return

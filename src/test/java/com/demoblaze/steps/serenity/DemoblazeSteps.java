@@ -7,6 +7,8 @@ import net.thucydides.core.steps.ScenarioSteps;
 public class DemoblazeSteps extends ScenarioSteps {
 
     BasePage basePage;
+    HomePage homePage;
+
     /***********************************
      *
      * BASE STEPS
@@ -38,19 +40,19 @@ public class DemoblazeSteps extends ScenarioSteps {
 //    }
 
     @Step("Opening the site")
-    public HomePage openStore() { return basePage.openStore();
+    public HomePage openStore() { return homePage.openStore();
     }
 
 
 
     @Step("Navigating to Signup Link")
     public HomePage navigateToSignUpLink() {
-        return basePage.navigateToSignUpLink();
+        return homePage.navigateToSignUpLink();
     }
 
     @Step("Entering info")
     public HomePage addNewUserInfo(String userName, String password) {
-        return basePage.addNewUserInfo(userName, password);
+        return homePage.addNewUserInfo(userName, password);
     }
 }
 
