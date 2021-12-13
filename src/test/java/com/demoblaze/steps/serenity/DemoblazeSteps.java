@@ -54,5 +54,17 @@ public class DemoblazeSteps extends ScenarioSteps {
     public HomePage addNewUserInfo(String userName, String password) {
         return homePage.addNewUserInfo(userName, password);
     }
+
+    @Step("Click on Sign up")
+    public HomePage clickSignUp() {
+        return homePage.clickSignUp();
+
+    }
+
+    @Step("get Alert")
+    public HomePage getAlert() {
+        return (HomePage) homePage.getAlert();
+
+    }
 }
 

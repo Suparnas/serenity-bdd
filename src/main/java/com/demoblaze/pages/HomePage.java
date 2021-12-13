@@ -8,7 +8,7 @@ public class HomePage  extends BasePage{
 
     private static final String PASSWORD_FIELD = "//input[@id='sign-password']";
 
-    private static final String SIGN_UP_BUTTON = "//*[@id='Catalog']//input[@name='account.firstName']";
+    private static final String SIGN_UP_BUTTON = "//button[contains(text(),'Sign up')]";
 
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
 
@@ -55,7 +55,7 @@ public class HomePage  extends BasePage{
 
         waitFor(SIGN_UP_BUTTON).$(SIGN_UP_BUTTON).click();
 
-        return this.switchToPage(HomePage.class);
+        return this;
     }
 
 }
