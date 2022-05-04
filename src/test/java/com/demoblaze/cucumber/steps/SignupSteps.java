@@ -1,69 +1,57 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.cucumber.steps.serenity.DemoblazeSteps;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
+import com.demoblaze.pages.HomePage;
+import com.demoblaze.pages.SignupPage;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.TimeoutException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-public class SignupSteps {
+public class SignUpSteps extends ScenarioSteps {
 
-    @Steps
-    DemoblazeSteps user;
+    SignupPage signupPage;
+    HomePage homePage;
 
-    @Managed
-    WebDriver driver;
+    /****************************
+     * SIGNUP STEPS
+     * /**************************
+     *  */
 
-    @Given("User have opened the Home Page")
-    public void UserNavigateToTheHomePage() {
-
-        user.navigateToHomePage();
+    @Step("Navigating to Signup Link")
+    public void navigateToSignUp() {
+        homePage.navigateToSignUp();
     }
-    @And("User have clicked on the Sign up link")
-    public void UserClickOnTheSignupLink() {
 
-        user.navigateToSignUp();
+    @Step("Entering info")
+    public void addNewUserInfo(String userName, String password) {
+        signupPage.addNewUserInfo(userName, password);
     }
-    @When("User enter {userName} and {password}")
-    public void UserAddUserNameAndPassword(String userName, String password) {
-        user.addNewUserInfo(userName, password);
+
+    @Step("Clicking on Sign Up button")
+    public void signUp() {
+        signupPage.signUp();
     }
-    @And("User click on sign up button")
-    public void UserClickOnSignUp() {
-        user.signUp();
-    }
-    @Then("the store should show an alert message saying the user exist")
-    public void UserMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
-        try{
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            assertEquals("This user already exist.", alertText);
+
+    @Step("Verifying alert saying User exists")
+    public void verifyIfUserExist() {
+        try {
+            signupPage.waitUntilAlertIsPresent();
+            assertEquals("This user already exist.", signupPage.getAlertText());
+        } catch (NoAlertPresentException | TimeoutException e) {
+            fail("Alert not shown");
         }
-        catch (Exception e){
-            System.out.println("Alert not Displayed");
     }
 
-    }
-
-    @Then("the store should show an alert message saying Sign up is successful")
-    public void UserMustBeAbleToViewTheAlertMessageSayingSignUpisSuccessful() {
-        try{
-            Alert alert1 = driver.switchTo().alert();
-            String alert1Text = alert1.getText();
-            assertEquals("Sign up successful.", alert1Text);
+    @Step("Verifying alert saying Signup is Successful")
+    public void verifySuccessfulSignup() {
+        try {
+            signupPage.waitUntilAlertIsPresent();
+            assertEquals("Sign up successful.", signupPage.getAlertText());
+        } catch (NoAlertPresentException | TimeoutException e) {
+            fail("Alert not shown");
         }
-        catch (Exception e){
-            System.out.println("Alert not Displayed");
-
-        }
-
     }
-
 }
-

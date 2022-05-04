@@ -1,32 +1,25 @@
-Feature: User Sign up to the Demo Blaze store
+Feature: Sign up to the DemoBlaze store
 
-         As a user I need to try to Sign up to the DemoBlaze store
+  @test1
+  Scenario Outline: Sign up as a new user to the Demo Blaze store but the user already exists
+    Given user is at DemoBlaze home page
+    And user clicks on the Sign up link
+    When user enters the <userName> and <password>
+    And user clicks on Sign up button
+    Then an alert message should say the user already exist
+    Examples:
+      | userName | password |
+      | user001  | test123  |
+      | user002  | test123  |
 
-      @test1
-      Scenario Outline: User sign up as a new user to the Demo Blaze store but the user already exists
-            Given User have opened the Home Page
-            And User have clicked on the Sign up link
-            When User enter <username> and <password>
-            And User click on sign up button
-            Then the store should show an alert message saying the user exist
-            Examples:
-                  | username   | password |
-                  | user001    | test123 |
-                  | user002    | test123  |
-
-
-
-      @test2
-      Scenario Outline: User Sign up as a new user to the Demo Blaze store and user doesn't exist
-            Given User have opened the Home Page
-            And User have clicked on the Sign up link
-            When User enter <username> and <password>
-            And User click on sign up button
-            Then the store should show an alert message saying Sign up is successful
-            Examples:
-                  | username   | password |
-                  | user006    | test123  |
-                  | user007    | test123  |
-
-
-
+  @test2
+  Scenario Outline: Sign up as a new user to the Demo Blaze store and user doesn't exist
+    Given user is at DemoBlaze home page
+    And user clicks on the Sign up link
+    When user enters the <userName> and <password>
+    And user clicks on Sign up button
+    Then an alert message should say Sign up is successful
+    Examples:
+      | userName   | password |
+      | newuser_23 | test123  |
+      | newuser_24 | test123  |
