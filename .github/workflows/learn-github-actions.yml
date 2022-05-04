@@ -23,7 +23,4 @@ jobs:
 
       - name: Snapshot Build
 
-        run: mvn clean install -T4 -DskipTests
-
-      - name: Smoke Tests
-        run: cd serenity-smoketests && mvn verify -Denvironment=run_with_chromets -v
+        run: mvn clean verify serenity:aggregate
