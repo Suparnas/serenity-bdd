@@ -1,8 +1,25 @@
-Feature: User Sign up to the Demo Blaze store
+Feature: Sign up to the DemoBlaze store
 
-Scenario: As a user I need to Sign up as a new user to the Demo Blaze store
-      Given I navigate to the registration page
-      And I add new user information
-      And I add new account information
-      Then I must be able to view the welcome greeting woith my name
+  @test1
+  Scenario Outline: Sign up as a new user to the Demo Blaze store but the user already exists
+    Given user is at DemoBlaze home page
+    And user clicks on the Sign up link
+    When user enters the <userName> and <password>
+    And user clicks on Sign up button
+    Then an alert message should say the user already exist
+    Examples:
+      | userName | password |
+      | user001  | test123  |
+      | user002  | test123  |
 
+  @test2
+  Scenario Outline: Sign up as a new user to the Demo Blaze store and user doesn't exist
+    Given user is at DemoBlaze home page
+    And user clicks on the Sign up link
+    When user enters the <userName> and <password>
+    And user clicks on Sign up button
+    Then an alert message should say Sign up is successful
+    Examples:
+      | userName   | password |
+      | newuser_23 | test123  |
+      | newuser_24 | test123  |
