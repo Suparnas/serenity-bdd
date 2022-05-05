@@ -1,6 +1,3 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
 name: Java CI with Maven on Firefox Windows
 
 on:
@@ -16,7 +13,7 @@ jobs:
 
     steps:
       - name: Set up Firefox
-       uses: browser-actions/setup-firefox@latest
+        uses: browser-actions/setup-firefox@latest
         with:
           firefox-version: "84.0"
       - uses: actions/checkout@v3
