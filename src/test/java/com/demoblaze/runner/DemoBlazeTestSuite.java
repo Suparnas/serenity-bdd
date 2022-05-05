@@ -8,6 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = "com.demoblaze.cucumber.featureSteps",
         plugin = {"pretty"},
-        features = "src/test/resources/features/navigation-links.feature")
+        features = "src/test/resources/features/user-login.feature")
 public class DemoBlazeTestSuite {
 }
