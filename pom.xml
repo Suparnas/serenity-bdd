@@ -123,6 +123,12 @@
                         <artifactId>serenity-core</artifactId>
                         <version>${serenity.version}</version>
                     </dependency>
+                    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+                    <dependency>
+                        <groupId>org.seleniumhq.selenium</groupId>
+                        <artifactId>selenium-firefox-driver</artifactId>
+                        <version>4.0.0</version>
+                    </dependency>
                 </dependencies>
                 <executions>
                     <execution>
