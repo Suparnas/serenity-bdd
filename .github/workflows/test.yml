@@ -7,6 +7,13 @@ on:
         description: 'Branch to run tests from'
         required: false
         default: 'main'
+      browser:
+        description: 'browser to run tests'
+        required: true
+        type: choice
+        options:
+          - chrome
+          - firefox
 
 jobs:
   build:
@@ -22,5 +29,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn clean verify serenity:aggregate -Dwebdriver.driver=chrome
+        run: mvn clean verify serenity:aggregate
 
