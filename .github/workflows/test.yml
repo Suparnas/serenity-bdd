@@ -14,11 +14,20 @@ on:
         options:
           - chrome
           - firefox
+          - safari
+      platform:
+        description:  'platform to run tests'
+        required: true
+        type: choice
+        options:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
 
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: ${{ github.event.inputs.platform }}
 
     steps:
       - uses: actions/checkout@v3
