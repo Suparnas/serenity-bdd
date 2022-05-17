@@ -29,5 +29,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-      - run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{ github.event.inputs.browser }}
+        run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{ github.event.inputs.browser }}
 
