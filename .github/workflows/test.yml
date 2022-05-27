@@ -16,8 +16,8 @@ on:
           - firefox
           - safari
           - edge
-      platform:
-        description:  'platform to run tests'
+      os:
+        description:  'environment to run tests'
         required: true
         type: choice
         options:
@@ -28,7 +28,7 @@ on:
 jobs:
   build:
 
-    runs-on: ${{ github.event.inputs.platform }}
+    runs-on: ${{github.event.inputs.os}}
 
     steps:
       - uses: actions/checkout@v3
