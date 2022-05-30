@@ -32,6 +32,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: browser-actions/setup-${{ github.event.inputs.browser }}@latest
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
