@@ -12,10 +12,10 @@ on:
         required: true
         type: choice
         options:
-          - chrome-latest
-          - firefox-latest
+          - chrome
+          - firefox
           - safari
-          - edge-stable
+          - edge
       os:
         description:  'environment to run tests'
         required: true
