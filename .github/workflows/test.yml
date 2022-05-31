@@ -40,12 +40,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-        if: ${{github.event.inputs.browser}} = 'edge'
-      - name: Setup Edge
-        uses: browser-actions/setup-edge@latest
-        with:
-            edge-version: beta
-
         if: ${{github.event.inputs.browser}} = 'chrome'
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
