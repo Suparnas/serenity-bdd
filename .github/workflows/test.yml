@@ -40,7 +40,11 @@ jobs:
 
       - name: Setup Edge
         if: contains(github.event.inputs.browser,'edge')
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 3b9457c76d0aa3da9f5f847e9dc233a359fe7e78
         uses: browser-actions/setup-edge@latest
         with:
           edge-version: beta
@@ -58,5 +62,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
+<<<<<<< HEAD
           name: Serenity Report for ${{github.event.inputs.browser}}
           path: target/site/serenity
+=======
+           name: Serenity Report for ${{github.event.inputs.browser}}
+           path: target/site/serenity
+>>>>>>> 3b9457c76d0aa3da9f5f847e9dc233a359fe7e78
