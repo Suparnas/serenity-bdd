@@ -28,6 +28,7 @@ on:
 jobs:
   build:
 
+
     runs-on: ${{github.event.inputs.os}}
 
     steps:
@@ -39,6 +40,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+
+       - name: Setup firefox
+        if: ${{github.event.inputs.browser}} = 'firefox'
+        uses: browser-actions/setup-firefox@latest
+        with:
+        firefox-version: latest
 
       - name: Build with Maven
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
