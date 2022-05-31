@@ -42,7 +42,7 @@ jobs:
 
       - name: Setup Edge
         if: ${{github.event.inputs.browser}} = 'edge'
-      - uses: browser-actions/setup-edge@latest
+        uses: browser-actions/setup-edge@latest
         with:
             edge-version: beta
 
