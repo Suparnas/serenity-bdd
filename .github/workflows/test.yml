@@ -48,3 +48,10 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
+        
+      - name: Upload Serenity Results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+           name: Serenity Report
+           path: target/site/serenity
