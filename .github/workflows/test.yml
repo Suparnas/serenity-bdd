@@ -40,15 +40,11 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-
-        if: ${{github.event.inputs.browser}} = 'firefox'
-      - name: Setup firefox
-        uses: browser-actions/setup-firefox@latest
+        if: ${{github.event.inputs.browser}} = 'edge'
+      - name: Setup Edge
+      - uses: browser-actions/setup-edge@latest
         with:
-          firefox-version: 84.0
-        if: ${{github.event.inputs.browser}} = 'chrome'
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@latest
+            edge-version: beta
 
       - name: Build with Maven
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
