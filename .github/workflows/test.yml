@@ -32,20 +32,21 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - if: github.event.inputs.browser = 'chrome'
-        name: Setup Chrome
+      - name: Setup Chrome
+        if: contains(github.event.inputs.browser,'chrome')
         uses: browser-actions/setup-chrome@latest
         with:
             chrome-version: latest
 
-      - if: github.event.inputs.browser = 'edge'
-        name: Setup Edge
+      - name: Setup Edge
+        if: contains(github.event.inputs.browser,'edge')
+      
         uses: browser-actions/setup-edge@latest
         with:
              edge-version: beta
 
-      - if: github.event.inputs.browser = 'firefox'
-        name: Setup Firefox
+      - name: Setup Firefox
+        if: contains(github.event.inputs.browser, 'firefox')
         uses: browser-actions/setup-firefox@latest
         with:
             firefox-version: latest
