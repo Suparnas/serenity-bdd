@@ -43,7 +43,7 @@ jobs:
 
         if: ${{github.event.inputs.browser}} = 'firefox'
       - name: Setup firefox
-        uses: browser-actions/setup-firefox@latest
+        uses: browser-actions/setup-firefox
 
       - name: Build with Maven
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
