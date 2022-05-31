@@ -30,8 +30,6 @@ jobs:
 
     runs-on: ${{github.event.inputs.os}}
 
-
-    if: github.event.inputs.browser == 'firefox'
     steps:
       - uses: actions/checkout@v3
 
