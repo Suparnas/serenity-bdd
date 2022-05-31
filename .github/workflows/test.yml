@@ -52,12 +52,6 @@ jobs:
         with:
             chrome-version: latest
 
-        if: ${{github.event.inputs.browser}} = 'safari'
-      - name: Setup Safari
-        uses: browser-actions/setup-safari@latest
-        with:
-            safari-version: latest
-
         if: ${{github.event.inputs.browser}} = 'firefox'
       - name: Setup Firefox
         uses: browser-actions/setup-firefox@latest
