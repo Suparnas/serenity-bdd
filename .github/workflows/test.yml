@@ -16,19 +16,11 @@ on:
           - firefox
           - safari
           - edge
-      os:
-        description:  'environment to run tests'
-        required: true
-        type: choice
-        options:
-          - macos-latest
-          - ubuntu-latest
-          - windows-latest
 
 jobs:
   build:
 
-    runs-on: ${{github.event.inputs.os}}
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -46,7 +38,12 @@ jobs:
         with:
             chrome-version: latest
 
-<<<<<<< HEAD
+        if: ${{github.event.inputs.browser}} = 'edge'
+      - name: Setup Edge
+        uses: browser-actions/setup-edge@latest
+        with:
+             edge-version: beta
+
         if: ${{github.event.inputs.browser}} = 'firefox'
       - name: Setup Firefox
         uses: browser-actions/setup-firefox@latest
