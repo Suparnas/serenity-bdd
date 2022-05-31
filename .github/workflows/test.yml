@@ -57,5 +57,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-           name: Serenity Report
+           name: Serenity Report for ${{github.event.inputs.browser}}
            path: target/site/serenity
