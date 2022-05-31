@@ -45,7 +45,7 @@ jobs:
       - name: Setup firefox
         uses: browser-actions/setup-firefox@latest
         with:
-          firefox-version: 84.0
+          firefox-version: 98.0
         if: ${{github.event.inputs.browser}} = 'chrome'
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
