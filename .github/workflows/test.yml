@@ -53,7 +53,7 @@ jobs:
       - name: Run Regression Tests
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
         
-      - name: Upload Serenity Results
+      - name: Upload Serenity Results for ${{github.event.inputs.browser}}
         if: always()
         uses: actions/upload-artifact@v2
         with:
