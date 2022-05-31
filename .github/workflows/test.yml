@@ -58,6 +58,12 @@ jobs:
         with:
             firefox-version: latest
 
+         if: ${{github.event.inputs.browser}} = 'safari'
+      - name: Setup Safari
+        uses: browser-actions/setup-safari@latest
+        with:
+            safari-version: latest
+
       - name: Run Regression Tests
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
         
