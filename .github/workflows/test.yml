@@ -41,12 +41,6 @@ jobs:
         with:
           edge-version: beta
 
-      - name: Setup Firefox
-        if: contains(github.event.inputs.browser, 'firefox')
-        uses: browser-actions/setup-firefox@latest
-        with:
-          firefox-version: latest
-
       - name: Run Regression Tests
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
 
