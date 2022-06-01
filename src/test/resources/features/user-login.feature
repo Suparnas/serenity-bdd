@@ -1,16 +1,16 @@
 Feature: Log in to DemoBlaze store
 
-  @test1
-  Scenario Outline: Log using a valid username and password
-    Given user is at the DemoBlaze home page
-    And user clicks on the Log in link
-    When user enters <username> and <password>
-    And user clicks on Log in button
-    Then user should see Welcome <username>
-    Examples:
-      | username | password |
-      | user002  | test123  |
-      | user003  | test123  |
+#  @test1
+#  Scenario Outline: Log using a valid username and password
+#    Given user is at the DemoBlaze home page
+#    And user clicks on the Log in link
+#    When user enters <username> and <password>
+#    And user clicks on Log in button
+#    Then user should see Welcome <username>
+#    Examples:
+#      | username | password |
+#      | user002  | test123  |
+#      | user003  | test123  |
 
   @test2
   Scenario Outline: Log using an valid username and invalid password
