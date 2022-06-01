@@ -35,12 +35,6 @@ jobs:
         with:
           chrome-version: latest
 
-      - name: Setup Edge
-        if: contains(github.event.inputs.browser,'edge')
-        uses: browser-actions/setup-edge@latest
-        with:
-          edge-version: latest
-
       - name: Run Regression Tests
         run: mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
 
