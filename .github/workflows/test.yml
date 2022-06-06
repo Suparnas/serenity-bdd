@@ -19,7 +19,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: chrome-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
