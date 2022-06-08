@@ -29,13 +29,21 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Setup ${{github.event.inputs.browser}}
-        uses: browser-actions/setup-${{github.event.inputs.browser}}@latest
-        with:
-          ${{github.event.inputs.browser}}-version: latest
+      - name: Run Regression for ${{github.event.inputs.browser}}
 
-      - name: Run Regression Tests
-        run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
+        if: ${{github.event.inputs.browser}} == 'chrome'
+      - name: Setup chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: latest
+        run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=chrome
+
+        if: ${{github.event.inputs.browser}} == 'firefox'
+      - name: Setup firefox
+        uses: browser-actions/setup-firefox@latest
+        with:
+            firefox-version: latest
+        run: mvn clean verify serenity:aggregate -Dwebdriver.driver=firefox
 
       - name: Upload Serenity Results for ${{github.event.inputs.browser}}
         if: always()
