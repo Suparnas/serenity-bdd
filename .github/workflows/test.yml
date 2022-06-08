@@ -45,7 +45,7 @@ jobs:
         name: Setup edge
         uses: browser-actions/setup-edge@latest
         with:
-            edge-version: latest
+            edge-version: beta
 
       - name: Run Regression for ${{github.event.inputs.browser}}
         run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
