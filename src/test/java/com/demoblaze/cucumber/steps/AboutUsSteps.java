@@ -4,6 +4,7 @@ import com.demoblaze.pages.AboutPage;
 import com.demoblaze.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertEquals;
 
@@ -47,5 +48,10 @@ public class AboutUsSteps extends ScenarioSteps {
         assertEquals("Play", aboutPage.getPlayButtonText());
         aboutPage.playVideo();
         assertEquals("Pause", aboutPage.getPauseButtonText());
+    }
+
+    @Step("Hover over video")
+    public void hoverVideo() {
+        aboutPage.moveToVideo();
     }
 }
