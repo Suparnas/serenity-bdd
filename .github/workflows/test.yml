@@ -47,12 +47,6 @@ jobs:
         with:
             edge-version: beta
 
-      - name: Setup Safari
-        if: ${{github.event.inputs.browser}} == 'safari'
-        uses: browser-actions/setup-safari
-        with:
-            safari-version: 15.1
-
       - name: Run Regression for ${{github.event.inputs.browser}}
         run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
 
