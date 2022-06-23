@@ -37,6 +37,7 @@ public class AboutUsFeatureSteps {
 
     @Then("the video should start playing")
     public void videoShouldPlay() {
+        aboutUsUser.verifyVideoPlays();
         aboutUsUser.hoverVideo();
         aboutUsUser.verifyPauseButton();
     }
